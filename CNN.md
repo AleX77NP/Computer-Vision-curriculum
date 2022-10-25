@@ -316,3 +316,7 @@ https://www.analyticsvidhya.com/blog/2019/04/introduction-image-segmentation-tec
 https://www.analyticsvidhya.com/blog/2019/07/computer-vision-implementing-mask-r-cnn-image-segmentation/
 
 https://deepsense.ai/region-of-interest-pooling-explained/
+
+# 26. MobileNet
+https://medium.com/@godeep48/an-overview-on-mobilenet-an-efficient-mobile-vision-cnn-f301141db94d
+
