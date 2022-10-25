@@ -1,5 +1,5 @@
 from torch.utils.data import Dataset, TensorDataset, DataLoader
-from model import ManualLinearRegression
+from model_example import ManualLinearRegression
 from sequential import make_train_step
 import torch
 import torch.nn as nn

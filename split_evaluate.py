@@ -1,6 +1,6 @@
 from torch.utils.data.dataset import random_split
 from torch.utils.data import TensorDataset, DataLoader
-from model import ManualLinearRegression
+from model_example import ManualLinearRegression
 from sequential import make_train_step
 import torch
 import torch.nn as nn
