@@ -313,6 +313,7 @@ Semantic & Instance segmentation
 
 https://www.analyticsvidhya.com/blog/2019/04/introduction-image-segmentation-techniques-python/?utm_source=blog&utm_medium=computer-vision-implementing-mask-r-cnn-image-segmentation
 
+
 https://www.analyticsvidhya.com/blog/2019/07/computer-vision-implementing-mask-r-cnn-image-segmentation/
 
 https://deepsense.ai/region-of-interest-pooling-explained/
@@ -320,3 +321,40 @@ https://deepsense.ai/region-of-interest-pooling-explained/
 # 26. MobileNet
 https://medium.com/@godeep48/an-overview-on-mobilenet-an-efficient-mobile-vision-cnn-f301141db94d
 
+# 27. Face Recognition
++ liveness detection (recognize person, not image)
++ Verification vs Recognition
++ Verification 1:1, Check if input is expected output - 1:1
++ Recognition is much harder, 1:K, where database has K person, has to output
+id if any of the persons is the one, or "not recognized"
+
+# 28. One Shot Learning
+- Learn from only 1 example
+- Similarity function -> d(image1, image2) = degree of difference
+- if d(image1, image2) < t = same person (t is hyperparameter)
+
+# 29. Siamese Network
+- Output layer acts like encoder for the input image - f(x)
+- d(x1, x2) = || f(x1) - f(x2) || 2 2 -> is small if it's the same person
+
+# 30. Triplet loss
+- Always 3 images (Anchor, Positive, Negative)
+- d(A, P) -> to be small, d(A, N) -> to be large
+- Norm(f(A), f(P)) / d(A, P) <= Norm(f(A), f(N)) / d(A, N) 
+- Norm(f(A), f(P)) - Norm(f(A), f(N)) + alfa <= 0 - alfa
+- Alfa is another hyperparameter (called margin) used to avoid triviality
+- L(A, P, N) = max([ Norm(f(A), f(P)) - Norm(f(A), f(N)) + alfa <= 0 - alfa ], 0)
+- Const function J
+- J = sum L(A, P, N) from 1 to m (training set size)
+- You need at least 2 images of the same person -> A, P
+## Choosing triplets?
+- Randomly -> d(A, P) + alfa <= d(A, N) is satisfied easily?
+- Better: choose triplets that are hard to train on, where maybe d(A, P) is close to
+d(A, N)
+- This is needed to push Gradient Descend to separate these two
+
+# 31. Face Verification
+- Binary classification
+- 2 CNNs outputs -> logistic regression
+- target = sigmoid[ sum (wi * (abs(f(x1i) - f(x2i))))+ b ]
+- Precompute encodings! for better performace & deployment
