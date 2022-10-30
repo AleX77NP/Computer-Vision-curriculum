@@ -358,3 +358,42 @@ d(A, N)
 - 2 CNNs outputs -> logistic regression
 - target = sigmoid[ sum (wi * (abs(f(x1i) - f(x2i))))+ b ]
 - Precompute encodings! for better performace & deployment
+
+# 32. Neural Style Transfer
+- C -> content image
+- S -> style image
+- G = C + S -> generated image
+In order to implement, look at extracted features is needed
+
+## What are deep CNNs learning
+Pick a unit in layer 1 and 9 images that maximize its activation. Repeat
+for other units.
+
+## Const function
+* J(G) = cost function for generated image
+* J_content(C, G) -> how similar if content of C to that of G
+* J_style(S, G) -> how similar is style of S to that of G
+
+J(G) = alfa * J_content(C, G) + beta * J_style(S, G)
+
+alfa, beta - relative weighting between content and style cost
+
+Steps:
+1. Init G randomly (100 x 100 x 3)
+2. Define J(G)
+3. Minimize J(G) with gradient descend
+
+## Content cost function
+- Choose layer "l" not too shallow and not too deep
+- J_content(C, G) -> how different are activations in layer "l"
+- J_content(C, G) = 1/2 Norm([ a[l][c] - a[l][G] ]) (element wise)
+- if a[l][C] and a[l][G] are similar, both images have similar content
+
+## Style cost function
+Style is defined as correlation between activations across channels
+
+Details and formulas:
+https://www.youtube.com/watch?v=QgkLfjfGul8&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=41
+
+# 33. 1D and 3D generalizations
+
