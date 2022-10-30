@@ -396,4 +396,4 @@ Details and formulas:
 https://www.youtube.com/watch?v=QgkLfjfGul8&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=41
 
 # 33. 1D and 3D generalizations
-
+https://www.youtube.com/watch?v=Cn8AtS-9Nwc&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=42
